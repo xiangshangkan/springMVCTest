@@ -14,18 +14,18 @@ public class XMLHelloControl implements Controller {
 
     }
     /**
-     * handleRequestÊÇController½Ó¿Ú±ØĞëÊµÏÖµÄ·½·¨¡£
-     * ¸Ã·½·¨µÄ²ÎÊı¶ÔÓ¦ÇëÇóµÄHttpServletRequest ºÍHttpServletResponse¶ÔÏó
-     * ¸Ã·½·¨±ØĞë·µ»ØÒ»¸ö°üº¬ÊÓÍ¼Ãû»òÊÓÍ¼ÃûºÍÄ£ĞÍµÄModelAndView¶ÔÏó
+     * handleRequestæ˜¯Controlleræ¥å£å¿…é¡»å®ç°çš„æ–¹æ³•ã€‚
+     * è¯¥æ–¹æ³•çš„å‚æ•°å¯¹åº”è¯·æ±‚çš„HttpServletRequest å’ŒHttpServletResponseå¯¹è±¡
+     * è¯¥æ–¹æ³•å¿…é¡»è¿”å›ä¸€ä¸ªåŒ…å«è§†å›¾åæˆ–è§†å›¾åå’Œæ¨¡å‹çš„ModelAndViewå¯¹è±¡
      * */
     @Override
     public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
-        logger.info("±»µ÷ÓÃ");
-        //´´½¨×¼±¸·µ»ØµÄModelAndView¶ÔÏó£¬¸Ã¶ÔÏóÍ¨³£°üº¬ÁË·µ»ØÊÓÍ¼Ãû¡¢Ä£ĞÍµÄÃû³ÆÒÔ¼°Ä£ĞÍ¶ÔÏó
+        logger.info("è¢«è°ƒç”¨");
+        //åˆ›å»ºå‡†å¤‡è¿”å›çš„ModelAndViewå¯¹è±¡ï¼Œè¯¥å¯¹è±¡é€šå¸¸åŒ…å«äº†è¿”å›è§†å›¾åã€æ¨¡å‹çš„åç§°ä»¥åŠæ¨¡å‹å¯¹è±¡
         ModelAndView mv = new ModelAndView();
-        //Ìí¼ÓÄ£ĞÍÊı¾İ,¿ÉÒÔÊÇÈÎÒâµÄpojo¶ÔÏó
+        //æ·»åŠ æ¨¡å‹æ•°æ®,å¯ä»¥æ˜¯ä»»æ„çš„pojoå¯¹è±¡
         mv.addObject("message","Hello World");
-        //ÉèÖÃÂß¼­ÊÓÍ¼Ãû£¬ÊÓÍ¼½âÎöÆ÷»á¸ù¾İ¸ÃÃû×Ö½âÎöµ½¾ßÌåµÄÊÓÍ¼Ò³Ãæ
+        //è®¾ç½®é€»è¾‘è§†å›¾åï¼Œè§†å›¾è§£æå™¨ä¼šæ ¹æ®è¯¥åå­—è§£æåˆ°å…·ä½“çš„è§†å›¾é¡µé¢
         mv.setViewName("hello/hello");
         return mv;
     }
