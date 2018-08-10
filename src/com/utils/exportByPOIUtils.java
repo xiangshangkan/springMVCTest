@@ -1,7 +1,10 @@
 package com.utils;
-
 import org.apache.poi.hssf.usermodel.*;
 import org.apache.poi.hssf.util.HSSFColor;
+import org.apache.poi.ss.usermodel.BorderStyle;
+import org.apache.poi.ss.usermodel.FillPatternType;
+import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.util.CellRangeAddress;
 
 import java.util.Map;
@@ -60,12 +63,11 @@ public class exportByPOIUtils {
      * @param workbook 工作普对象
      * @param type     1 head 2 body
      * @return 样式表
-     * /
-     /*
+     */
     private static HSSFCellStyle getStyle(HSSFWorkbook workbook, int type) {
         HSSFCellStyle style = workbook.createCellStyle();
         //水平居中
-        style.setAlignment(HSSFCellStyle.ALIGN_CENTER);
+        style.setAlignment(HorizontalAlignment.CENTER);
         //自动换行
         style.setWrapText(true);
 
@@ -76,21 +78,21 @@ public class exportByPOIUtils {
 
         if (type == 1) {
             //垂直居中
-            style.setVerticalAlignment(HSSFCellStyle.VERTICAL_CENTER);
+            style.setVerticalAlignment(VerticalAlignment.CENTER);
             //背景色
             style.setFillForegroundColor(HSSFColor.GREY_25_PERCENT.index);
-            style.setFillPattern(HSSFCellStyle.SOLID_FOREGROUND);
+            style.setFillPattern(FillPatternType.SOLID_FOREGROUND);
             //设置边框
-            style.setBorderBottom(HSSFCellStyle.BORDER_THIN);
-            style.setBorderLeft(HSSFCellStyle.BORDER_THIN);
-            style.setBorderRight(HSSFCellStyle.BORDER_THIN);
-            style.setBorderTop(HSSFCellStyle.BORDER_THIN);
+            style.setBorderBottom(BorderStyle.THIN);
+            style.setBorderLeft(BorderStyle.THIN);
+            style.setBorderRight(BorderStyle.THIN);
+            style.setBorderTop(BorderStyle.THIN);
         } else {
-            style.setBorderBottom(HSSFCellStyle.BORDER_THIN);
-            style.setBorderLeft(HSSFCellStyle.BORDER_THIN);
-            style.setBorderRight(HSSFCellStyle.BORDER_THIN);
-            style.setBorderTop(HSSFCellStyle.BORDER_THIN);
+            style.setBorderBottom(BorderStyle.THIN);
+            style.setBorderLeft(BorderStyle.THIN);
+            style.setBorderRight(BorderStyle.THIN);
+            style.setBorderTop(BorderStyle.THIN);
         }
         return style;
-    }*/
+    }
 }
